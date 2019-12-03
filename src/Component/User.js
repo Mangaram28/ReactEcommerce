@@ -1,8 +1,8 @@
 import React,{ useState } from 'react';
 
 const name={
-    color:"darkmagenta",
-    shadow:{opacity: 0.5,color:"red"}
+    color:"black",
+    shadow:{opacity: 0.5,color:"black"}
 };
 
 const Detail = props =>{
@@ -23,9 +23,9 @@ function User(){
     const [data, setData] = useState([]);
     /*-- --*/
 
-    /*const addEntryData = () => {
+    const addEntryData = () => {
         setData(oldData => [...oldData,`dataset ${oldData.length} `])
-    };*/
+    };
 
     const date = new Date();
     const hours = date.getHours()
@@ -40,16 +40,16 @@ function User(){
             <h5>{count}</h5>
             <hr/>
             
-           <button>dataset</button>
+            <button onClick={addEntryData}>dataset</button>
 
            <div>{data.map(entry =>
                   <div>{entry}</div>
             )}
             </div>
 
-            <Detail name='ram' />
-            <Detail name='mack' />
-            <Detail name='jim' />
+          {/*  <Detail name='ram' />
+               <Detail name='mack' />
+               <Detail name='jim' />  */}
            
         </div>
     );
