@@ -11,6 +11,8 @@ constructor(){
         Users:[],
         searchField:''
     };
+
+   
 }
 
 
@@ -20,6 +22,9 @@ constructor(){
   }
   
 
+  handlechange = (e) => {
+    this.setState({searchField: e.target.value});
+  } 
  
     render(){
    
@@ -36,7 +41,7 @@ constructor(){
                         this.setState({searchField: e.target.value})
                                         }/>*/}  
 
-                       <SearchBox handlechange={e => this.setState({searchField: e.target.value})}/>
+                       <SearchBox handlechange={this.handlechange}/>
 
                        <CardList Users={Filteruser}></CardList>
                       
@@ -45,10 +50,6 @@ constructor(){
         )
     }
 }
-
-
-
-
 
 
 
