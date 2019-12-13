@@ -2,31 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 
-//import { Route, BrowserRouter as Router,Switch } from 'react-router-dom';
 
-//import User from './Component/User';
 
 import Router from './Router.js';
 
+/* provider is in parent component of redux */
+import {Provider} from 'react-redux';
+import Store from './redux/store';
 
-/*const routing = (
-    <Router>
-      <div>
-        <Switch>
-            <Route exact path="/" component={Card} />
-        
-            <Route path="/Profile" component={UserProfile} />
-        
-        </Switch>
-      </div>
-    </Router>
-)*/
+
+
 
  
 
 
 
-ReactDOM.render(<Router/>, document.getElementById('root'));
+ReactDOM.render(
+                <Provider store={Store}>
+                    <Router/>
+                </Provider>,
+                document.getElementById('root')
+               );
 
 
 
