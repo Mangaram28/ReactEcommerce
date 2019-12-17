@@ -5,6 +5,7 @@ import UserProfile from './Component/Profile/UserProfile';
 import Header from './Component/Header/HeaderSection';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
+import CheckOut from './pages/checkout/checkout.component';
 import SignInSignUp from './Component/Sign-in-Sign_up/Sign-in-Sign-up-component';
 import { auth, createUserProfileDocment } from './firebase/firebase.utils';
 
@@ -50,6 +51,7 @@ class Routes extends React.Component {
                     <Switch>
                             <Route path="/" exact component={HomePage} />
                             <Route path='/shop' exact component={ShopPage}/>
+                            <Route path='/checkout' exact component={CheckOut}/>
                             <Route path="/Profile/:id" exact component={UserProfile}  />
                             <Route path="/SignUp" exact render={() => this.props.currentUser ? ( <Redirect to='/'/> ) : (<SignInSignUp/>)}/>
                     </Switch>
